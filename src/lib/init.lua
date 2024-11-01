@@ -204,7 +204,7 @@ if lsystem.getOS() == "Windows" then
 
    return {wrap = wrap}
 elseif lsystem.getOS() == "Linux" then
-   local core    = require("ssl.core")
+   local core    = require("ssl_lin64.core")
    local context = require("ssl.context")
    local x509    = require("ssl.x509")
    local config  = require("ssl.config")
