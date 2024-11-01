@@ -38,7 +38,7 @@ else
    error("Unsupported system!")
 end
 love.filesystem.setCRequirePath( love.filesystem.getCRequirePath() .. ";"..cwd:gsub("%.", separator)..separator..filename)
-
+print(love.filesystem.getCRequirePath())
 if lsystem.getOS() == "Windows" then
    local core    = require("ssl.core")
    local context = require("ssl.context")
