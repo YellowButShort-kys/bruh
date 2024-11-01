@@ -23,7 +23,7 @@ if system == "Windows" then
       filename = "ssl_win32.dll"
    end
 elseif system == "Linux" then
-   separator = "\\"
+   separator = "/"
    --test for 64 bit interface
    local cmd = io.popen("uname -m");
    local res = cmd:read("*a");
@@ -204,7 +204,7 @@ if lsystem.getOS() == "Windows" then
 
    return {wrap = wrap}
 elseif lsystem.getOS() == "Linux" then
-   local core    = require("ssl_lin64.core")
+   local core    = require("ssl.core")
    local context = require("ssl.context")
    local x509    = require("ssl.x509")
    local config  = require("ssl.config")
