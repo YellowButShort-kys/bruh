@@ -41,10 +41,11 @@ end
 local servelove = require("src")
 local server = servelove.NewServer("0.0.0.0", 5000)
 
---[[
 server:Route("/ping", function(request, response)
     return "true"
 end)
+
+--[[
 server:Route("/ping/<key>/<penis>", function(request, response)
     return request:GetUrlArgs("key") .. "____" .. request:GetUrlArgs("penis")
 end)
@@ -85,4 +86,6 @@ end)
 
 server:Verbose("DEBUG")
 server:StartProfiler()
+server:Certificate("/home/vboxuser/test/bruh/certificate.crt")
+server:PrivateKey("/home/vboxuser/test/bruh/private.key")
 server:Run()
